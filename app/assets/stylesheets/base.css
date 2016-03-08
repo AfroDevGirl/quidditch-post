@@ -1,0 +1,85 @@
+/***** color reference *****
+ * light green:   50A25F
+ * dark green:    2E6F3F
+ * blue:          44BCED
+ * dark blue:     287696
+ * v. light grey: F2F2F2
+ * light grey:    999999
+ * dark grey:     333333
+ */
+
+/***** resets *****/
+
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+	border: none;
+	width: 100%;
+}
+
+/***** custom fonts *****/
+
+@font-face {
+    font-family: 'league gothic';
+    src: url('../fonts/leaguegothic-regular.ttf');
+}
+
+/***** floating *****/
+
+.pull-left {
+	float: left;
+}
+
+.pull-right {
+	float: right;
+}
+
+.clear-both {
+  clear: both;
+}
+
+.clear-after:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/***** flexbox *****/
+
+.flexbox {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+}
+
+.flexbox > * {
+  flex: 1;
+}
+
+/***** main body width *****/
+
+.main-body-width {
+  max-width: 960px;
+  margin: 0px auto;
+}
+
+.main-body-width:after {
+  content: "";
+  display: table;
+  clear: both;
+}

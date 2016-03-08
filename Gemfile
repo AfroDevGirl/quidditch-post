@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.1'
 # Use sqlite3 as the database for Active Record
-gem 'pg'
+gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -24,7 +24,11 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use ActiveModel has_secure_password
-gem 'bcrypt', '~> 3.1.7'
+# if Bundler::WINDOWS
+#   gem 'bcrypt-ruby', '~> 3.0.0', require: false
+# else
+#   gem 'bcrypt', '~> 3.1.10', require: false
+# end
 
 # Use Unicorn as the app server
 # gem 'unicorn'
@@ -51,7 +55,7 @@ gem 'refinerycms', '~> 3.0'
 # Optionally, specify additional Refinery CMS Extensions here:
 gem 'refinerycms-acts-as-indexed', ['~> 2.0', '>= 2.0.1']
 gem 'refinerycms-wymeditor', ['~> 1.0', '>= 1.0.6']
-gem 'refinerycms-authentication-devise', '~> 1.0'
+# gem 'refinerycms-authentication-devise', '~> 1.0'
 # gem 'refinerycms-blog', ['~> 3.0', '>= 3.0.0']
 # gem 'refinerycms-inquiries', ['~> 3.0', '>= 3.0.0']
 # gem 'refinerycms-search', ['~> 3.0', '>= 3.0.0']
@@ -61,7 +65,7 @@ gem 'refinerycms-authentication-devise', '~> 1.0'
 #ruby nil
 
 # The Heroku gem allows you to interface with Heroku's API
-gem 'heroku'
+# gem 'heroku'
 
 group :production do
   # Dragonfly's S3 Data Store extension allows you to use S3 assets (added for Heroku)
@@ -72,3 +76,5 @@ group :production do
   gem 'puma'
 
 end
+
+# gem 'refinerycms-blog', git: 'https://github.com/refinery/refinerycms-blog', branch: 'master'
