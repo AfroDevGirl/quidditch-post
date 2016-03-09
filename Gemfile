@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.1'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -24,11 +24,6 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use ActiveModel has_secure_password
-# if Bundler::WINDOWS
-#   gem 'bcrypt-ruby', '~> 3.0.0', require: false
-# else
-#   gem 'bcrypt', '~> 3.1.10', require: false
-# end
 
 # Use Unicorn as the app server
 # gem 'unicorn'
@@ -47,7 +42,7 @@ group :development do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+# gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Refinery CMS
 gem 'refinerycms', '~> 3.0'
@@ -55,14 +50,14 @@ gem 'refinerycms', '~> 3.0'
 # Optionally, specify additional Refinery CMS Extensions here:
 gem 'refinerycms-acts-as-indexed', ['~> 2.0', '>= 2.0.1']
 gem 'refinerycms-wymeditor', ['~> 1.0', '>= 1.0.6']
-# gem 'refinerycms-authentication-devise', '~> 1.0'
+gem 'refinerycms-authentication-devise', '~> 1.0'
 # gem 'refinerycms-blog', ['~> 3.0', '>= 3.0.0']
 # gem 'refinerycms-inquiries', ['~> 3.0', '>= 3.0.0']
 # gem 'refinerycms-search', ['~> 3.0', '>= 3.0.0']
 # gem 'refinerycms-page-images', ['~> 3.0', '>= 3.0.0']
 
 # The Ruby version is specified here so that Heroku uses the right version.
-#ruby nil
+ruby '2.2.1'
 
 # The Heroku gem allows you to interface with Heroku's API
 # gem 'heroku'
@@ -77,4 +72,4 @@ group :production do
 
 end
 
-# gem 'refinerycms-blog', git: 'https://github.com/refinery/refinerycms-blog', branch: 'master'
+gem 'refinerycms-blog', git: 'https://github.com/refinery/refinerycms-blog', branch: 'master'
