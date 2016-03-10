@@ -51,13 +51,14 @@ gem 'refinerycms', '~> 3.0'
 gem 'refinerycms-acts-as-indexed', ['~> 2.0', '>= 2.0.1']
 gem 'refinerycms-wymeditor', ['~> 1.0', '>= 1.0.6']
 gem 'refinerycms-authentication-devise', '~> 1.0'
+# gem 'refinerycms-page-resources'
 # gem 'refinerycms-blog', ['~> 3.0', '>= 3.0.0']
 # gem 'refinerycms-inquiries', ['~> 3.0', '>= 3.0.0']
 # gem 'refinerycms-search', ['~> 3.0', '>= 3.0.0']
 # gem 'refinerycms-page-images', ['~> 3.0', '>= 3.0.0']
 
 # The Ruby version is specified here so that Heroku uses the right version.
-ruby '2.2.1'
+#ruby '2.2.1'
 
 # The Heroku gem allows you to interface with Heroku's API
 # gem 'heroku'
@@ -72,4 +73,5 @@ group :production do
 
 end
 
+gem 'refinerycms-page-resources', git: 'https://github.com/anitagraham/refinerycms-page-resources', branch: 'master'
 gem 'refinerycms-blog', git: 'https://github.com/refinery/refinerycms-blog', branch: 'master'
