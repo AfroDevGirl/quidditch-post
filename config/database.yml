@@ -17,8 +17,8 @@ development:
   encoding: unicode
   database: <%= Rails.application.engine_name.gsub(/_application/,'').downcase %>_development
   pool: 5
-  username: postgres
-  password: postgres
+  username: amoody
+  password: admin
   min_messages: warning
 
   # Connect on a TCP socket. Omitted by default since the client uses a
@@ -44,8 +44,8 @@ test:
   encoding: unicode
   database: <%= Rails.application.engine_name.gsub(/_application/,'').downcase %>_test
   pool: 5
-  username: postgres
-  password: postgres
+  username: amoody
+  password: admin
   min_messages: warning
 
 production:
@@ -53,6 +53,6 @@ production:
   encoding: unicode
   database: <%= Rails.application.engine_name.gsub(/_application/,'').downcase %>_production
   pool: 5
-  username: postgres
-  password: postgres
+  username: amoody
+  password: admin
   min_messages: warning
