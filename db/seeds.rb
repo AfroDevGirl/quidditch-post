@@ -11,3 +11,12 @@ Refinery::Pages::Engine.load_seed
 
 # Added by Refinery CMS Blog engine
 Refinery::Blog::Engine.load_seed
+
+  # Added by Refinery CMS Jobs engine
+  Refinery::Jobs::Engine.load_seed
+
+# Added by Refinery CMS Teams extension
+Refinery::Teams::Engine.load_seed
+
+# Added by Refinery CMS ResourceCategories extension
+Refinery::ResourceCategories::Engine.load_seed

@@ -55,7 +55,7 @@ gem 'refinerycms-authentication-devise', '~> 1.0'
 # gem 'refinerycms-blog', ['~> 3.0', '>= 3.0.0']
 # gem 'refinerycms-inquiries', ['~> 3.0', '>= 3.0.0']
 # gem 'refinerycms-search', ['~> 3.0', '>= 3.0.0']
-# gem 'refinerycms-page-images', ['~> 3.0', '>= 3.0.0']
+# gem 'refinerycms-page-images', '~> 3.0.0'
 
 # The Ruby version is specified here so that Heroku uses the right version.
 #ruby '2.2.1'
@@ -73,5 +73,8 @@ group :production do
 
 end
 
-gem 'refinerycms-page-resources', git: 'https://github.com/anitagraham/refinerycms-page-resources', branch: 'master'
+gem 'refinerycms-resource-categories', github: 'bisscomm/refinerycms-resource-categories', branch: 'master'
+gem 'refinerycms-teams', github: 'bisscomm/refinerycms-teams', branch: 'master'
+gem 'refinerycms-page-images', github: 'refinery/refinerycms-page-images', branch: 'master'
+gem 'refinerycms-jobs', github: 'bisscomm/refinerycms-jobs', branch: 'master'
 gem 'refinerycms-blog', git: 'https://github.com/refinery/refinerycms-blog', branch: 'master'

@@ -38,15 +38,12 @@
         <div class='features-header latest'>LATEST FEATURES</div>
 
         <ul class='features-body'>
-          <li><a href='#'>The second coming of Troy</a></li>
-          <li><a href='#'>Turkey&apos;s Intergalactik Cup reveals more details</a></li>
-          <li><a href='#'>West 7-5-3-1</a></li>
-          <li><a href='#'>Exclusive: Belgian Quidditch Federation announce major season overhaul</a></li>
-          <li><a href='#'>Sunday Quidditch comics</a></li>
-          <li><a href='#'>Valentines Cup III announced</a></li>
+          <% @posts.each do |blog|%>
+            <li><a href="<%= blog.source_url %>"><%= blog.title %></a></li>
+          <% end %>  
         </ul>
 
-        <a class='features-footer' href='#'>
+        <a class='features-footer' href='/blog'>
           MORE ARTICLES
           <%= image_tag("QP_arrow.png") %>
         </a>

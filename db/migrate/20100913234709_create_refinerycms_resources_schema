@@ -1,4 +1,3 @@
-# This migration comes from refinery_resources (originally 20100913234709)
 class CreateRefinerycmsResourcesSchema < ActiveRecord::Migration
   def change
     create_table :refinery_resources do |t|

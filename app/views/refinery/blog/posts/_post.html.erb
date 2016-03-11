@@ -1,0 +1,125 @@
+<% flash.each do |key, value| %>
+ <div id='flash' class="flash flash_<%= key %>">
+   <%= value %>
+ </div>
+<% end %>
+<% if (categories = @post.categories).any? %>
+  <ul class='tag-list'>
+      <% categories.each_with_index do |category, index| %>
+        <%= link_to category.title, refinery.blog_category_path(category)%>
+      <% end %>
+  </ul>
+<% end %>
+<h1 class='article-title'><%= @post.title %></h1>
+  <div class='article-title-underline'></div>
+  <div class='article-credit'>
+  by
+    <a href='#'><%= @post.author.username %></a>
+  <%= @post.published_at.to_date %>
+  </div>
+  <div class='flexbox'>
+    <div class='article'>
+      <div class='article-photo leading-photo'>
+        <img src='img/QP_ArticlePhoto.png'/>
+        <div class='article-photo-caption'>
+          Remy Conatser hasn&apos;t played quidditch since the Hollywood Bowl in 2012.
+        </div>
+        <div class='article-photo-credit'>
+          Photo Credit: Kat Ignatova Photography
+        </div>
+      </div>
+        <%= @post.body.html_safe %>
+  <% if Refinery::Blog::Post::ShareThis.enabled? %>
+    <span class="st_sharethis" displayText="ShareThis"></span>
+  <% end %>
+</article>
+<%= render '/refinery/draft_page_message' unless @post.nil? or @post.live? -%>
+<%= render 'nav' if next_or_previous?(@post) %>
+    <%= render 'comments' %>
+    </div>
+
+    
+    <div class='features-sidebar'>
+      <div class='features-box no-footer'>
+        <div class='features-header related'>RELATED ARTICLES</div>
+        <!-- SHOW ARTICLES WITHIN THE SAME CATEGORY -->
+        <ul class='features-body'>
+          <% @posts.each do |blog|%>
+            <li><a href='<%= blog.source_url %>'><%= blog.title %></a></li>
+          <% end %>
+        </ul>
+      </div>
+
+      <div class='features-box'>
+        <div class='features-header latest'>LATEST FEATURES</div>
+
+        <ul class='features-body'>
+          <% @posts.each do |blog|%>
+              <li><a href="<%= blog.source_url %>"><%= blog.title %></a></li>
+            <% end %>  
+        </ul>
+
+        <a class='features-footer' href='#/blog'>
+          MORE ARTICLES
+           <%= image_tag("QP_arrow.png") %>
+        </a>
+      </div>
+
+      <div class='features-box'>
+        <div class='features-header podcasts'>QP PODCASTS</div>
+
+        <ul class='features-body alternating'>
+          <li><a class='feature-with-date' href='#'>
+            <span>Quidcast Australia</span>
+            <span>Today</span>
+          </a></li>
+          <li><a class='feature-with-date' href='#'>
+            <span>Quidcast Europe</span>
+            <span>Today</span>
+          </a></li>
+          <li><a class='feature-with-date' href='#'>
+            <span>Quidcast Great Lakes</span>
+            <span>12/7/15</span>
+          </a></li>
+          <li><a class='feature-with-date' href='#'>
+            <span>Quidcast Midwest</span>
+            <span>12/7/15</span>
+          </a></li>
+          <li><a class='feature-with-date' href='#'>
+            <span>Quidcast Northeast</span>
+            <span>12/7/15</span>
+          </a></li>
+          <li><a class='feature-with-date' href='#'>
+            <span>Quidcast Northwest</span>
+            <span>12/7/15</span>
+          </a></li>
+          <li><a class='feature-with-date' href='#'>
+            <span>Quidcast South</span>
+            <span>12/4/15</span>
+          </a></li>
+        </ul>
+
+        <a class='features-footer' href='#'>
+          MORE PODCASTS
+          <%= image_tag("QP_arrow.png") %>
+        </a>
+      </div>
+
+      <div class='features-box'>
+        <div class='features-header featured'>FEATURED CONTENT</div>
+
+        <div class='features-body'>
+          <a class='feature-with-image' href='#'>
+            <img src='img/QP_featured_comic.png'/>
+          </a>
+        </div>
+
+        <a class='features-footer' href='#'>
+          VIEW ON FACEBOOK
+          <img src='img/QP_arrow.png'/>
+        </a>
+      </div>
+    </div>
+  </div>
+
+

@@ -1,0 +1,8 @@
+<div class='comments-seperator' id='<%= "comment-#{comment.to_param}" %>'></div>
+  <%= image_tag avatar_url(comment.email), :alt => comment.name, :class => 'avatar' %>
+  <p><%= comment.message.to_s %></p>
+  <div class='comment-credit'>
+    by 
+    <a href="#"> <%= comment.name %></a>
+ 	<%= time_ago_in_words(comment.created_at)%>
+  </div>

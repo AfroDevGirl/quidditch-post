@@ -1,126 +1,101 @@
-<div class='header-stripe'></div>
+<h1 class='article-title'><%= @page.title %></h1>
+<div class='article-title-underline'></div>
+<div class='article-credit'>
+</div>
 
-  <div class='main-body-width'>
-    <div class='header'>
-      <a class='header-image-link' href='#'>
-        <img src="img/QP_Banner.png"/>
-      </a>
+<div class='flexbox'>
+  <div class='article'>
+    <div class='article-body'>
+        <% @page.images.each do |image| %>
+          <%= image_tag(image.url)%>
+        <% end %>
+        <%= raw(@page.content_for(:body)) %>
+    </div>
+  </div>
 
-      <div class='header-controls'>
-        <ul class='header-nav-links'>
-          <li><a href='#'>HOME</a></li>
-          <li><a href='#'>ABOUT</a></li>
-          <li><a href='#'>JOBS</a></li>
-          <li><a chref='#'>ARCHIVE</a></li>
-          <li><a href='#'>STAFF</a></li>
-        </ul>
+  <div class='features-sidebar'>
+    <div class='features-box no-footer'>
+      <div class='features-header related'>NEWEST JOBS</div>
 
-        <ul class='social-links'>
-          <li><a href='#'>
-            <img src='img/QP_social_FB_dark.png'/>
-          </a></li>
-          <li><a href='#'>
-            <img src='img/QP_social_TW_dark.png'/>
-          </a></li>
-          <li><a href='#'>
-            <img src='img/QP_social_RSS_dark.png'/>
-          </a></li>
-          <li><a href='#'>
-            <img src='img/QP_social_IG_dark.png'/>
-          </a></li>
-        </ul>
-
-        <a class='button-link contribute-button' href='#'>CONTRIBUTE</a>
-      </div>
+      <ul class='features-body'>
+      <% if @jobs %>
+        <% @jobs.each do |job| %>
+          <%= link_to job.title, refinery.jobs_job_url(job) %>
+        <% end %>
+      <% end %>
+      </ul>
     </div>
 
-    <div class='menu-bar'>
-      <ul class='menu-bar-items'>
-        <li><a href='#'>FEATURES</a></li>
-        <li><a href='#'>NORTH AMERICA</a></li>
-        <li><a href='#'>EUROPE</a></li>
-        <li><a href='#'>AUSTRALIA</a></li>
-        <li><a href='#'>SOUTH AMERICA</a></li>
-        <li><a href='#'>AFRICA</a></li>
-        <li><a href='#'>ASIA</a></li>
-        <li><a href='#'>SEARCH HERE</a></li>
-        <li><a href='#'>INTERNATIONAL</a></li>
+    <div class='features-box'>
+      <div class='features-header latest'>LATEST FEATURES</div>
+
+        <ul class='features-body'>
+        <% if @posts %>
+          <% @posts.each do |blog|%>
+            <li><a href="<%= blog.source_url %>"><%= blog.title %></a></li>
+          <% end %>  
+        <% end %>
+        </ul>
+
+      <a class='features-footer' href='#'>
+        MORE ARTICLES
+        <img src='img/QP_arrow.png'/>
+      </a>
+    </div>
+
+    <div class='features-box'>
+      <div class='features-header podcasts'>QP PODCASTS</div>
+
+      <ul class='features-body alternating'>
+        <li><a class='feature-with-date' href='#'>
+          <span>Quidcast Australia</span>
+          <span>Today</span>
+        </a></li>
+        <li><a class='feature-with-date' href='#'>
+          <span>Quidcast Europe</span>
+          <span>Today</span>
+        </a></li>
+        <li><a class='feature-with-date' href='#'>
+          <span>Quidcast Great Lakes</span>
+          <span>12/7/15</span>
+        </a></li>
+        <li><a class='feature-with-date' href='#'>
+          <span>Quidcast Midwest</span>
+          <span>12/7/15</span>
+        </a></li>
+        <li><a class='feature-with-date' href='#'>
+          <span>Quidcast Northeast</span>
+          <span>12/7/15</span>
+        </a></li>
+        <li><a class='feature-with-date' href='#'>
+          <span>Quidcast Northwest</span>
+          <span>12/7/15</span>
+        </a></li>
+        <li><a class='feature-with-date' href='#'>
+          <span>Quidcast South</span>
+          <span>12/4/15</span>
+        </a></li>
       </ul>
 
-      <div class='menu-bar-search'>
-        <img src='img/QP_magnifying_glass.png'/>
-        <input placeholder='SEARCH HERE'/>
+      <a class='features-footer' href='#'>
+        MORE PODCASTS
+        <img src='img/QP_arrow.png'/>
+      </a>
+    </div>
+
+    <div class='features-box'>
+      <div class='features-header featured'>FEATURED CONTENT</div>
+
+      <div class='features-body'>
+        <a class='feature-with-image' href='#'>
+          <img src='img/QP_featured_comic.png'/>
+        </a>
       </div>
+
+      <a class='features-footer' href='#'>
+        VIEW ON FACEBOOK
+        <img src='img/QP_arrow.png'/>
+      </a>
     </div>
   </div>
-<section id='body'>
-  <%=raw @page.content_for(:body) %>
-</section>
-<section id='side_body'>
-  <%=raw @page.content_for(:side_body) %>
-</section>
-  <div class='footer'>
-    <div class='main-body-width'>
-      <div class='flexbox'>
-        <div>
-          <div class='footer-social-links-title'>SOCIAL LINKS</div>
-
-          <ul class='social-links'>
-            <li><a href='#'>
-              <img src='img/QP_social_FB_light.png'/>
-            </a></li>
-            <li><a href='#'>
-              <img src='img/QP_social_TW_light.png'/>
-            </a></li>
-            <li><a href='#'>
-              <img src='img/QP_social_RSS_light.png'/>
-            </a></li>
-            <li><a href='#'>
-              <img src='img/QP_social_IG_light.png'/>
-            </a></li>
-          </ul>
-
-          <a class='button-link contribute-button' href='#'>CONTRIBUTE</a>
-        </div>
-
-        <div>
-          <div class='footer-links-title'>ARTICLES</div>
-
-          <div class='flexbox'>
-            <ul class='footer-links'>
-              <li><a href='#'>Features</a></li>
-              <li><a href='#'>North America</a></li>
-              <li><a href='#'>Europe</a></li>
-              <li><a href='#'>Australia</a></li>
-            </ul>
-
-            <ul class='footer-links'>
-              <li><a href='#'>South America</a></li>
-              <li><a href='#'>Africa</a></li>
-              <li><a href='#'>Asia</a></li>
-              <li><a href='#'>International</a></li>
-            </ul>
-          </div>
-        </div>
-
-        <div class='flexbox'>
-          <div>
-            <a href="#">
-              <img class='footer-logo' src='img/QP_Footer_Logo.png'/>
-            </a>
-          </div>
-
-          <div>
-            <div class='footer-links-title'>MORE</div>
-
-            <ul class='footer-links'>
-              <li><a href='#'>About</a></li>
-              <li><a href='#'>Jobs</a></li>
-              <li><a href='#'>Archive</a></li>
-              <li><a href='#'>Staff</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+</div>
