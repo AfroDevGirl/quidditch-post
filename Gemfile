@@ -58,7 +58,7 @@ gem 'refinerycms-authentication-devise', '~> 1.0'
 # gem 'refinerycms-page-images', '~> 3.0.0'
 
 # The Ruby version is specified here so that Heroku uses the right version.
-#ruby '2.2.1'
+ruby '2.2.1'
 
 # The Heroku gem allows you to interface with Heroku's API
 # gem 'heroku'
