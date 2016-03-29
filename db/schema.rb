@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160310234331) do
+ActiveRecord::Schema.define(version: 20160329144603) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -332,6 +332,27 @@ ActiveRecord::Schema.define(version: 20160310234331) do
 
   add_index "refinery_resource_category_translations", ["locale"], name: "index_refinery_resource_category_translations_on_locale", using: :btree
   add_index "refinery_resource_category_translations", ["refinery_resource_category_id"], name: "index_91f73590a845631e2f11f3ac1437b8d3fcb02168", using: :btree
+
+  create_table "refinery_resource_translations", force: :cascade do |t|
+    t.integer  "refinery_resource_id", null: false
+    t.string   "locale",               null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.string   "resource_title"
+  end
+
+  add_index "refinery_resource_translations", ["locale"], name: "index_refinery_resource_translations_on_locale", using: :btree
+  add_index "refinery_resource_translations", ["refinery_resource_id"], name: "index_refinery_resource_translations_on_refinery_resource_id", using: :btree
+
+  create_table "refinery_resources", force: :cascade do |t|
+    t.string   "file_mime_type"
+    t.string   "file_name"
+    t.integer  "file_size"
+    t.string   "file_uid"
+    t.string   "file_ext"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "refinery_settings", force: :cascade do |t|
     t.string   "name"

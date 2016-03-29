@@ -4,10 +4,10 @@ Refinery::Resources.configure do |config|
   # config.max_file_size = 52428800
 
   # Configure how many resources per page should be displayed when a dialog is presented that contains resources
-  config.pages_per_dialog = 12
+  # config.pages_per_dialog = 12
 
   # Configure how many resources per page should be displayed in the list of resources in the admin area
-  config.pages_per_admin_index = 20
+  # config.pages_per_admin_index = 20
 
   # Configure S3 (you can also use ENV for this)
   # The s3_backend setting by default defers to the core setting for this but can be set just for resources.
@@ -19,10 +19,10 @@ Refinery::Resources.configure do |config|
 
   # Configure Dragonfly
   # config.dragonfly_verify_urls = true
-  # config.dragonfly_secret = "63b30fedf0e936781e6a9536aa492e0274b16ad7292be998"
+  # config.dragonfly_secret = "e5ff7469b3d21c0dc078c9f0e2ba3b48af36554ff44b5775"
   # config.dragonfly_url_format = "/system/resources/:job/:basename.:ext"
   # config.dragonfly_url_host = ""
-  # config.datastore_root_path = "C:/testapp/public/system/refinery/resources"
+  # config.datastore_root_path = "/home/amoody/Desktop/quidditch-post/public/system/refinery/resources"
   # config.content_disposition = :attachment
 
   # Configure Dragonfly custom storage backend
